@@ -1,0 +1,80 @@
+# =============================================================================
+#  dunst/dunstrc  --  Notificaciones Mushoku Tensei
+#
+#  OJO: dunst NO lee archivos .rasi (eso es rofi). Los colores van aqui
+#  directamente, en formato #RRGGBB.
+#
+#  La paleta vive en themes/mushoku-tensei/colors.json y se regenera con:
+#      python themes/export.py
+#  Si reejecutas el exportador y cambias la paleta, actualiza este archivo.
+# =============================================================================
+
+[global]
+    # --- Monitor y posicion ---
+    monitor = 0
+    follow = keyboard
+    corner = top_right
+
+    # --- Tiempos ---
+    notification_timeout = 6
+    fade_in = 200
+    fade_out = 400
+    separator_height = 6
+    separator_color = "#26304F"
+    horizontal_padding = 20
+    vertical_padding = 14
+
+    # --- Marco ---
+    frame_width = 2
+    frame_color = "#1B2340"
+    gap_size = 0
+    corner_radius = 8
+
+    # --- Comportamiento ---
+    stack_duplicates = true
+    always_run = true
+    hide_indicator = yes
+    show_indicators = yes
+
+    # Iconos de las acciones (requiere libnotify / dunst >= 1.9)
+    icon_position = left
+    min_icon_size = 24
+
+    # --- Texto global ---
+    font = Noto Sans 10
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+
+    # Valores heredados por cada urgencia (se sobreescriben abajo)
+    background_color = "#0B0E1A"
+    text_color = "#ECEFF8"
+    icon_color = "#C9D4E8"
+
+[urgency_low]
+    # Secondary /-information: Rudeus (oro apagado)
+    background_color = "#0B0E1A"
+    text_color = "#8E9AB8"
+    frame_color = "#121729"
+    timeout = 5
+
+[urgency_normal]
+    # Roxy (agua) y Sylphiette (viento)
+    background_color = "#121729"
+    text_color = "#ECEFF8"
+    frame_color = "#5BC8FF"
+    timeout = 6
+
+[urgency_critical]
+    # Eris (fuego): la sombra roja del Laberinto
+    background_color = "#0B0E1A"
+    text_color = "#ECEFF8"
+    frame_color = "#FF5F56"
+    timeout = 0
+
+[shortcuts]
+    close = "escape, shift+space"
+    close_all = "shift+a"
+    history = "grave"
+    context = "shift+m"

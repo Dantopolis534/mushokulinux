@@ -1,0 +1,84 @@
+// =============================================================================
+//  cyberArch-Dotfiles :: Mushoku Tensei
+//  fastfetch/mushoku.jsonc
+//
+//  Uso:  fastfetch --config ~/.config/fastfetch/mushoku.jsonc
+//  Si quieres que sea el default:
+//        ln -sf ~/.config/fastfetch/mushoku.jsonc ~/.config/fastfetch/config.jsonc
+//        (o edita la clave "config" de ~/.config/fastfetch/config.jsonc)
+// =============================================================================
+
+{
+  "$schema": "https://raw.githubusercontent.com/fastfetch-cli/dev/dev/schema/config.jsonc",
+
+  "global": {
+    "config": true
+  },
+
+  // La consola con los colores de Fittoa
+  "console": {
+    "module_prefix": " ",
+    "key_prefix": "\u001b[38;2;91;200;255m  󰪞 \u001b[38;2;92;104;138m",
+    "key_color": "cyan",
+    "value_color": "white",
+    "key_width": 16,
+    "line_length": 40,
+    "rectangular": true,
+    "reflow": true,
+    "time": true
+  },
+
+  // El logo: Rudeus con la varita, reinterpretado como arte ASCII original.
+  "logo": {
+    "type": "ascii",
+    "source": "rudeus",
+    "color": [
+      "cyan",
+      "purple",
+      "gold"
+    ],
+    "padding": "1 0 0 0",
+    "to_upper": false
+  },
+
+  "modules": [
+    {
+      "type": "text",
+      "text": "<bold><color=cyan>MUSHOKU TENSEI</color></bold>  <color=gray>·</color>  <color=gold>cyberArch-Dotfiles</color>",
+      "padding": "1 1"
+    },
+
+    { "type": "separator" },
+    { "type": "separator", "string": "El Viaje de " },
+
+    { "type": "os",        "key": "  Continente",   "key_color": "gold",  "value_color": "cyan" },
+    { "type": "kernel",    "key": "  Runa",         "key_color": "gold",  "value_color": "gray" },
+    { "type": "host",      "key": "  Fortaleza",    "key_color": "gold",  "value_color": "purple" },
+    { "type": "uptime",    "key": "  Reencarnado",  "key_color": "gold",  "value_color": "green" },
+
+    { "type": "separator" },
+    { "type": "separator", "string": "El Hechicero " },
+
+    { "type": "cpu",       "key": "  Poder",       "key_color": "gold",  "value_color": "cyan" },
+    { "type": "memory",    "key": "  Memoria",     "key_color": "gold",  "value_color": "purple" },
+    { "type": "wm",        "key": "  Reino",       "key_color": "gold",  "value_color": "cyan" },
+    { "type": "terminal",  "key": "  Terminal",    "key_color": "gold",  "value_color": "gray" },
+    { "type": "shell",     "key": "  Bash",        "key_color": "gold",  "value_color": "green" },
+    { "type": "theme",    "key": "  Tema",        "key_color": "gold",  "value_color": "purple" },
+
+    { "type": "separator" },
+    { "type": "separator", "string": "El Mundo    " },
+
+    { "type": "disk",      "key": "  Tierras",     "key_color": "gold",  "value_color": "cyan" },
+    { "type": "packages",  "key": "  Grimorios",   "key_color": "gold",  "value_color": "gray" },
+    { "type": "ip",        "key": "  Portal",      "key_color": "gold",  "value_color": "cyan" },
+    { "type": "localip",   "key": "  Reino",       "key_color": "gold",  "value_color": "purple" },
+
+    { "type": "separator" },
+    {
+      "type": "text",
+      "text": " <color=gray>«  Destino reescrito con Arch Linux  »</color>",
+      "padding": "1 1"
+    }
+  ]
+}

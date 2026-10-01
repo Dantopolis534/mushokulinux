@@ -1,0 +1,96 @@
+M U S H O K U   T E N S E I
+                    ~ cyberArch-Dotfiles ~
+
+  --------------------------------------------------------------
+  "Quien guio mi destino fue la confianza de alguien."
+                                              -- Rudeus Greyrat
+  --------------------------------------------------------------
+
+  Esto es una consola de ejercicio, no el grimorio real.
+  Funciona como manual rapido de tu escritorio. Escribe:
+
+    ayuda           esta pantalla
+    mt_persona      lista los personajes disponibles
+    mt_diagnostico  reporte completo de la maquina
+
+  --------------------------------------------------------------
+  LOS PERSONAJES  --  cada uno tiene su color
+  --------------------------------------------------------------
+
+  RUDEUS GREYRAT      oro       #E0B354   el hechicero
+    El punto de partida de este escritorio. Todo arranca con su magia.
+
+  ROXY MIGURDIA       azul      #5BC8FF   agua y hielo
+    Tu maestra. Voz calmada, conjuros precisos.
+    Es el acento mas productivo del tema.
+
+  ERIS BOREAS GREYRAT rojo      #FF5F56   fuego y espada
+    La espada magica. Rosa en el pelo, cero paciencia.
+    Ideal si prefieres contraste agresivo.
+
+  SYLPHIETTE          verde     #5FD98A   viento
+    El viento la saluda al pasar. Alegre y ligera.
+
+  GHISLAINE DEDOLDIA  plata     #C9D4E8   plata y luna
+    El color del texto normal. La mas sobria de todas.
+
+  HITOGAMI            violeta   #9B7BD4   el vacio
+    El que mira desde arriba. Escribe tu destino en los libros.
+    Ten cuidado con las decisiones que tomaste sin pensar.
+
+  LARA MEGMIND        violeta   #B47BD4   violeta suave
+    Para las notas personales. La voz que nunca olvidas.
+
+  RUIJERD SUPERDEMON  obsidiana #8C6BD4   poder
+    Para las tareas largas. El mas fuerte de Fittoa.
+
+  Para cambiar de personaje:
+    mt_persona roxy
+
+  --------------------------------------------------------------
+  LAS SEIS PAGINAS DEL LABERINTO
+  --------------------------------------------------------------
+
+  Super+1  fittoa      la sesion principal
+  Super+2  millishion  lo de Roxy
+  Super+3  asura       lo de Eris
+  Super+4  sharia      lo de Sylphie
+  Super+5  bosque      ventanas apiladas (layout master)
+  Super+6  labyrinth   sistemas, terminales grandes
+
+  Workspace especial: Super+Space
+
+  --------------------------------------------------------------
+  UN POCO DE HISTORIA
+  --------------------------------------------------------------
+
+  Rudeus Greyrat murio en un hospital de Japon a los 34 anos.
+  Murio sin decepcionar a nadie y sin tener la oportunidad de
+  cambiar su vida.
+
+  Al despertar, se reencarno en otro mundo, en el continente
+  magico de Fittoa, como un bebe que todavia no tiene nombre.
+
+  Su segunda vida no la escribio el destino. La escribio el.
+
+  Eso es, en el fondo, de lo que se trata esto de los dotfiles:
+  de reescribir tu propio destino con software libre.
+
+  --------------------------------------------------------------
+  LOS ATAJOS QUE MAS SE USAN
+  --------------------------------------------------------------
+
+  Super+Return    terminal
+  Super+D         lanzador de aplicaciones
+  Super+E         editor (neovim)
+  Super+B         monitor de sistema (btop)
+  Super+Print     captura de region al portapapeles
+  Super+Ctrl+L    bloquear pantalla (hyprlock)
+  Super+Shift+Q   cerrar sesion
+  Super+,         recargar Hyprland
+  Super+.         activar/desactivar animaciones
+
+  El mapa completo esta en:
+    ~/.config/hypr/conf.d/binds.conf
+
+  --------------------------------------------------------------

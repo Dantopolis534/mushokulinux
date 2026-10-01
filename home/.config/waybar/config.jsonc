@@ -1,0 +1,164 @@
+// =============================================================================
+//  cyberArch-Dotfiles :: Mushoku Tensei
+//  waybar/config.jsonc  --  Requiere waybar >= 0.11 (sintaxis `fmt`)
+// =============================================================================
+{
+  "layer": "top",
+  "position": "top",
+  "height": 34,
+  "spacing": 6,
+
+  // Hyprland manda el fondo; waybar solo pinta sus modulos.
+  "margin-top": 0,
+  "margin-bottom": 0,
+
+  "reload_interval": 1,
+
+  "modules-left":   ["custom/sello", "hyprland/workspaces", "hyprland/submap"],
+  "modules-center": ["hyprland/window"],
+  "modules-right":  [
+    "pulseaudio",
+    "network",
+    "bluetooth",
+    "cpu",
+    "memory",
+    "custom/temperatura",
+    "backlight",
+    "battery",
+    "tray",
+    "clock"
+  ],
+
+  // ---------------------------------------------------------------- sentinel
+  "custom/sello": {
+    "format": "MUSHOKU",
+    "tooltip": true,
+    "on-click": "rofi -show drun -show-icons",
+    "on-click-event": true
+  },
+
+  // ------------------------------------------------------------- workspaces
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "format": "{icon}",
+    "format-icons": {
+      "default": "󰉖",           // puerta
+      "1": "󰲋",                  // 1 fittoa
+      "2": "󰊢",                  // 2 millishion
+      "3": "󰔁",                  // 3 asura
+      "4": "󱃂",                  // 4 sharia
+      "5": "󰡮",                  // 5 bosque
+      "6": "󰓥"                   // 6 labyrinth
+    },
+    "tooltip-format": "{id}: {name}"
+  },
+
+  "hyprland/submap": {
+    "format": " {}",
+    "tooltip": false
+  },
+
+  // ----------------------------------------------------------------- ventana
+  "hyprland/window": {
+    "format": "󰈱  {}",
+    "max-length": 60,
+    "separate-icons": true
+  },
+
+  // -------------------------------------------------------------------- audio
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝣  mute",
+    "format-icons": {
+      "default": ["󰕾"],
+      "100": ["󰕾"],
+      "75":  ["󰖀"],
+      "50":  ["󰕾"],
+      "25":  ["󰖀"],
+      "0":   ["󱚣"]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  // ------------------------------------------------------------------ red
+  "network": {
+    "format-wifi": "󰤨 {signalStrength}%",
+    "format-ethernet": "󰤨 {ipaddr}",
+    "format-disconnected": "󰤭",
+    "format-icons": {
+      "wifi": ["󰤨", "󰤨", "󰤨"],
+      "wired": ["󰤨", "󰤨", "󰤨"],
+      "disconnected": "󰤭"
+    },
+    "tooltip-format": "{ifname} via {iface}\n{ipaddr}/{cidr}\n{essid}\n{link_speed}",
+    "on-click": "nmcli"
+  },
+
+  // -------------------------------------------------------------- bluetooth
+  "bluetooth": {
+    "format": "󰂯",
+    "format-connected": "󰂱 {device_enumerate}",
+    "format-disabled": "󰂲",
+    "format-unavailable": "󰂲",
+    "tooltip-format": "{status}\n{device_enumerate}\n{device_address}",
+    "on-click": "blueman-manager"
+  },
+
+  // ------------------------------------------------------------- rendimiento
+  "cpu": {
+    "format": "󰻨 {usage}%",
+    "interval": 2,
+    "tooltip-format": "i5-11400H · 6 nucleos / 12 hilos\nCarga: {usage}%"
+  },
+
+  "memory": {
+    "format": "󰍛 {percentage}%",
+    "interval": 5,
+    "tooltip-format": "{used} / {total} GiB"
+  },
+
+  // --------------------------------------------------------------- ASUS TUF
+  "custom/temperatura": {
+    "format": "󰃬 {}°",
+    "exec": "~/.local/bin/mt-temperatura",
+    "return-type": "async",
+    "interval": 5,
+    "tooltip": true
+  },
+
+  "backlight": {
+    "format": "󰃩 {percent}%",
+    "tooltip": false
+  },
+
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰚥 {capacity}%",
+    "format-full": "󰁹 {capacity}%",
+    "format-icons": {
+      "default": ["󰁹", "󰁸", "󰁼", "󰁽", "󰁿", "󰂀", "󰃁", "󰃂", "󰃃", "󰛅"]
+    },
+    "tooltip-format": "{capacity}% {time}"
+  },
+
+  // ------------------------------------------------------------------- reloj
+  "clock": {
+    "format": "󰥔 {:calendar} 󰥔 {:time}",
+    "tooltip-format": "<big>󰥔 {:calendar}</big>\n<big>󰥔 {:time}</big>\n󰇁 Semana {:week}",
+    "format-alt": "󰥔 {:calendar}",
+    "interval": 1
+  },
+
+  // -------------------------------------------------------------------- tray
+  "tray": {
+    "icon-size": 15,
+    "spacing": 8,
+    "tooltip": true
+  },
+
+  // ----------------------------------------------------------- visual global
+  "font": "JetBrainsMono Nerd Font 10.5",
+  "font-placeholder": false,
+}

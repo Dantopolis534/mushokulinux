@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  cyberArch-Dotfiles :: Mushoku Tensei
+  sello-orsted.svg :: El sello del Laberinto (usado por hyprlock)
+
+  Obra original creada para este repositorio.
+  Icono cuadrado de 512x512, transparente salvo el sello.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <filter id="gO" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g transform="translate(256 256)" fill="none" stroke-linecap="round" filter="url(#gO)">
+    <!-- Anillos del sello -->
+    <circle r="236" stroke="#9B7BD4" stroke-width="3" opacity="0.55"/>
+    <circle r="206" stroke="#5C688A" stroke-width="2" opacity="0.45"/>
+    <circle r="176" stroke="#9B7BD4" stroke-width="3" opacity="0.70"/>
+    <circle r="146" stroke="#5C688A" stroke-width="1.5" opacity="0.40"/>
+
+    <!-- Octagono -->
+    <polygon points="236,0 166.9,166.9 0,236 -166.9,166.9 -236,0 -166.9,-166.9 0,-236 166.9,-166.9"
+             stroke="#9B7BD4" stroke-width="3" opacity="0.65"/>
+
+    <!-- Rombo interior -->
+    <polygon points="0,-176 124,0 0,176 -124,0"
+             stroke="#E0B354" stroke-width="3" opacity="0.75"/>
+
+    <!-- Cruz del destino -->
+    <path d="M -146,0 H 146 M 0,-146 V 146"
+          stroke="#5C688A" stroke-width="2" opacity="0.40"/>
+
+    <!-- Runas del borde -->
+    <g stroke="#E0B354" stroke-width="3.5" opacity="0.85">
+      <path d="M 0,-236 v -22 M -166.9,-166.9 l -16,-16 M -236,0 h -22 M -166.9,166.9 l -16,16"/>
+      <path d="M 0,236 v 22  M 166.9,166.9 l 16,16 M 236,0 h 22  M 166.9,-166.9 l 16,-16"/>
+    </g>
+
+    <!-- Ojo central -->
+    <ellipse cx="0" cy="0" rx="54" ry="50" fill="#04030A" stroke="#9B7BD4" stroke-width="2.5" opacity="0.95"/>
+    <ellipse cx="0" cy="0" rx="20" ry="34" fill="#ECEFF8" opacity="0.90"/>
+    <circle cx="-8" cy="-12" r="4.5" fill="#FFFFFF" opacity="0.95"/>
+  </g>
+</svg>

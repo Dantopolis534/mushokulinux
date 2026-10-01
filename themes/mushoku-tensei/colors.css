@@ -1,0 +1,34 @@
+/* cyberArch-Dotfiles :: Mushoku Tensei
+ * Formato universal tipo *.css para: waybar, hypridle, foot, gtk-4 web.
+ * Generado desde colors.json por export.py -- NO EDITAR A MANO.
+ */
+
+
+@define-color bg0    #080A12;
+@define-color bg1    #0B0E1A;
+@define-color bg2    #121729;
+@define-color bg3    #1B2340;
+@define-color bg4    #26304F;
+
+@define-color fg0    #ECEFF8;
+@define-color fg1    #C9D4E8;
+@define-color fg2    #8E9AB8;
+@define-color fg3    #5C688A;
+
+@define-color roxy      #5BC8FF;
+@define-color eris      #FF5F56;
+@define-color sylphie   #5FD98A;
+@define-color ghislaine #C9D4E8;
+@define-color rudeus    #E0B354;
+@define-color hitogami  #9B7BD4;
+@define-color lara      #B47BD4;
+@define-color ruijerd   #8C6BD4;
+
+@define-color error     #FF5F56;
+@define-color success   #5FD98A;
+@define-color warning   #E0B354;
+@define-color info      #5BC8FF;
+@define-color hint      #9B7BD4;
+
+@define-color selected_bg   #26304F;
+@define-color selected_fg   #ECEFF8;

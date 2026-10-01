@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  cyberArch-Dotfiles :: Mushoku Tensei
+  roxy.svg :: Magia de agua
+
+  Obra original creada para este repositorio.
+  Paleta de Roxy Migurdia: azul hielo, con destellos de plata.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="cieloR" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.00" stop-color="#05070F"/>
+      <stop offset="0.40" stop-color="#080D1C"/>
+      <stop offset="0.70" stop-color="#0C1A30"/>
+      <stop offset="1.00" stop-color="#12263F"/>
+    </linearGradient>
+
+    <radialGradient id="auraR" cx="52%" cy="40%" r="60%">
+      <stop offset="0.00" stop-color="#5BC8FF" stop-opacity="0.28"/>
+      <stop offset="0.50" stop-color="#5BC8FF" stop-opacity="0.09"/>
+      <stop offset="1.00" stop-color="#05070F" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="aguaR" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.00" stop-color="#1E4A70" stop-opacity="0.55"/>
+      <stop offset="1.00" stop-color="#081020" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <filter id="glowR" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#cieloR)"/>
+  <rect width="1920" height="1080" fill="url(#auraR)"/>
+
+  <!-- Burbujas de agua en ascension -->
+  <g filter="url(#glowR)" fill="none" stroke="#5BC8FF">
+    <circle cx="240"  cy="300" r="9"  opacity="0.42"/>
+    <circle cx="400"  cy="180" r="6"  opacity="0.35"/>
+    <circle cx="620"  cy="380" r="13" opacity="0.40"/>
+    <circle cx="880"  cy="220" r="8"  opacity="0.30"/>
+    <circle cx="1120" cy="330" r="11" opacity="0.38"/>
+    <circle cx="1360" cy="190" r="7"  opacity="0.32"/>
+    <circle cx="1580" cy="360" r="14" opacity="0.36"/>
+    <circle cx="1760" cy="240" r="10" opacity="0.30"/>
+  </g>
+
+  <!-- Circulo de invocacion de agua -->
+  <g transform="translate(1000 460)" fill="none" stroke-linecap="round">
+    <circle r="270" stroke="#5BC8FF" stroke-width="1.5" opacity="0.34"/>
+    <circle r="228" stroke="#C9D4E8" stroke-width="1.0" opacity="0.24"/>
+    <circle r="186" stroke="#5BC8FF" stroke-width="0.9" opacity="0.26"/>
+
+    <!-- Triangulo de agua -->
+    <polygon points="0,-228 197,114 -197,114" stroke="#5BC8FF" stroke-width="1.6" opacity="0.40"/>
+    <polygon points="0,228 -197,-114 197,-114" stroke="#5BC8FF" stroke-width="1.6" opacity="0.26"/>
+
+    <!-- Pentagrama invertido parcial -->
+    <g stroke="#9B7BD4" stroke-width="1.1" opacity="0.28">
+      <path d="M 0,-270 L 255,83 L -157,222 L 157,222 L -255,83 Z"/>
+    </g>
+
+    <!-- Ondas concentricas -->
+    <g stroke="#5BC8FF" stroke-width="1.0" opacity="0.20">
+      <circle r="120"/>
+      <circle r="150"/>
+    </g>
+  </g>
+
+  <!-- Gota central (Lapidos) -->
+  <g transform="translate(1000 460)" filter="url(#glowR)">
+    <path d="M 0,-70 C 34,-22 52,2 52,26 A 52,52 0 1,1 -52,26 C -52,2 -34,-22 0,-70 Z"
+          fill="#5BC8FF" opacity="0.22"/>
+    <path d="M 0,-70 C 34,-22 52,2 52,26 A 52,52 0 1,1 -52,26 C -52,2 -34,-22 0,-70 Z"
+          fill="none" stroke="#C9D4E8" stroke-width="1.6" opacity="0.55"/>
+    <ellipse cx="-16" cy="26" rx="9" ry="14" fill="#ECEFF8" opacity="0.30"/>
+  </g>
+
+  <!-- Linea de agua -->
+  <rect x="0" y="900" width="1920" height="180" fill="url(#aguaR)"/>
+
+  <!-- Reflejos -->
+  <g stroke="#5BC8FF" stroke-width="1.2" opacity="0.18" fill="none">
+    <path d="M 860,940 h 280 M 900,968 h 200 M 820,996 h 360 M 880,1024 h 240"/>
+  </g>
+
+  <!-- Espuma -->
+  <g filter="url(#glowR)" fill="#C9D4E8">
+    <circle cx="200" cy="912" r="2.4" opacity="0.45"/>
+    <circle cx="470" cy="926" r="2.0" opacity="0.35"/>
+    <circle cx="740" cy="908" r="2.6" opacity="0.50"/>
+    <circle cx="1290" cy="920" r="2.2" opacity="0.40"/>
+    <circle cx="1540" cy="932" r="2.6" opacity="0.45"/>
+    <circle cx="1790" cy="914" r="2.0" opacity="0.35"/>
+  </g>
+</svg>

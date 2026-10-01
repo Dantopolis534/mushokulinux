@@ -1,0 +1,46 @@
+# Las lineas deben terminar en LF, NUNCA en CRLF.
+#
+# Sin esto, git en Windows convierte a CRLF y un install.sh con CR al final
+# de cada linea falla en Linux con:
+#     ./install.sh: line 12: $'\r': command not found
+#
+# El repo es para Arch Linux, asi que LF tanto en el repositorio como en el
+# arbol de trabajo, incluso en Windows. De ahi el eol=lf explicito.
+#
+# Esta regla general basta para casi todo; las de abajo solo dejan claro
+# la intencion para quien lea el archivo.
+
+* text=auto eol=lf
+
+# Scripts: si algo sale mal, que salga mal por el motivo equivocado y no por
+# un CR invisible.
+*.sh      text eol=lf
+install.sh text eol=lf
+
+# Configuracion que leen parsers sensibles a CRLF
+*.conf    text eol=lf
+*.confi   text eol=lf
+*.rasi    text eol=lf
+*.json    text eol=lf
+*.jsonc   text eol=lf
+*.fish    text eol=lf
+*.zshrc   text eol=lf
+*.bashrc  text eol=lf
+*.profile text eol=lf
+
+# Scripts de Windows. LF tambien, por consistencia y porque preparar-usb.ps1
+# se documente y compara contra guias de Arch.
+*.ps1     text eol=lf
+*.cs      text eol=lf
+
+# Documentacion
+*.md      text eol=lf
+*.txt     text eol=lf
+*.py      text eol=lf
+
+# Los SVG son texto con XML. LF para que no cambien entre plataformas.
+*.svg     text eol=lf
+
+# Los PNG se generan con install.sh a partir de los SVG y estan en
+# .gitignore, pero si alguno se cuela, git no debe intentar tocarlo.
+*.png     binary

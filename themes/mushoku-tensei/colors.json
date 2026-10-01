@@ -1,0 +1,99 @@
+{
+  "$schema_note": "cyberArch-Dotfiles :: paleta canonica Mushoku Tensei. Fuente de verdad para todos los exporters.",
+
+  "meta": {
+    "name": "Mushoku Tensei",
+    "codename": "cyberArch",
+    "substratum": "Fittoa / Magical Continent",
+    "author": "cyberArch-Dotfiles",
+    "mode": "dark"
+  },
+
+  "personajes": {
+    "roxy": {
+      "nombre": "Roxy Migurdia",
+      "elemento": "Agua / Hielo",
+      "hex": "#5BC8FF",
+      "rgb": "91,200,255",
+      "uso": "acento primario, magIA, terminal links"
+    },
+    "eris": {
+      "nombre": "Eris Boreas Greyrat",
+      "elemento": "Fuego / Espada",
+      "hex": "#FF5F56",
+      "rgb": "255,95,86",
+      "uso": "alertas, errores, destructivo"
+    },
+    "sylphie": {
+      "nombre": "Sylphiette",
+      "elemento": "Viento",
+      "hex": "#5FD98A",
+      "rgb": "95,217,138",
+      "uso": "exito, git limpio, red/up"
+    },
+    "ghislaine": {
+      "nombre": "Ghislaine Dedoldia",
+      "elemento": "Plata / Luna",
+      "hex": "#C9D4E8",
+      "rgb": "201,212,232",
+      "uso": "texto principal claro"
+    },
+    "rudeus": {
+      "nombre": "Rudeus Greyrat",
+      "elemento": "Oro / Magia",
+      "hex": "#E0B354",
+      "rgb": "224,179,84",
+      "uso": "acento secundario, foco, cwd"
+    },
+    "hitogami": {
+      "nombre": "Hitogami",
+      "elemento": "Vacio / Divinidad",
+      "hex": "#9B7BD4",
+      "rgb": "155,123,212",
+      "uso": "acento terciario, mistico, hyprlock"
+    },
+    "lara": {
+      "nombre": "Lara Megmind",
+      "elemento": "Violeta",
+      "hex": "#B47BD4",
+      "rgb": "180,123,212",
+      "uso": "notas personales, atajos"
+    },
+    "ruijerd": {
+      "nombre": "Ruijerd Superdemon",
+      "elemento": "Obsidiana",
+      "hex": "#8C6BD4",
+      "rgb": "140,107,212",
+      "uso": "poder, tareas largas"
+    }
+  },
+
+  "base": {
+    "bg0_void":     { "hex": "#080A12", "rgb": "8,10,18",    "desc": "fondo mas profundo, paneles" },
+    "bg1_night":    { "hex": "#0B0E1A", "rgb": "11,14,26",   "desc": "fondo base terminal" },
+    "bg2_fittoa":   { "hex": "#121729", "rgb": "18,23,41",   "desc": "superficie elevada" },
+    "bg3_wood":     { "hex": "#1B2340", "rgb": "27,35,64",   "desc": "bordes, hover" },
+    "bg4_stone":    { "hex": "#26304F", "rgb": "38,48,79",   "desc": "separadores, shells inactivos" },
+
+    "fg0":          { "hex": "#ECEFF8", "rgb": "236,239,248", "desc": "texto maximo contraste" },
+    "fg1":          { "hex": "#C9D4E8", "rgb": "201,212,232", "desc": "texto normal" },
+    "fg2":          { "hex": "#8E9AB8", "rgb": "142,154,184", "desc": "texto secundario" },
+    "fg3":          { "hex": "#5C688A", "rgb": "92,104,138",  "desc": "comentarios, deshabilitado" }
+  },
+
+  "funcional": {
+    "error":      "#FF5F56",
+    "success":    "#5FD98A",
+    "warning":    "#E0B354",
+    "info":       "#5BC8FF",
+    "hint":       "#9B7BD4",
+    "selection":  "#26304F",
+    "selection_fg": "#ECEFF8"
+  },
+
+  "gradientes": {
+    "magic_circle": ["#5BC8FF", "#9B7BD4", "#FF5F56"],
+    "laberinto":   ["#E0B354", "#B47BD4", "#8C6BD4"],
+    "aurora":      ["#5FD98A", "#5BC8FF", "#9B7BD4"]
+  }
+}

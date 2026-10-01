@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  cyberArch-Dotfiles :: Mushoku Tensei
+  hitogami.svg :: El dios invisible
+
+  Obra original creada para este repositorio.
+  Paleta violeta del vacio: el unico lugar donde el destino
+  no esta escrito.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <radialGradient id="vacio" cx="50%" cy="50%" r="75%">
+      <stop offset="0.00" stop-color="#1B1230"/>
+      <stop offset="0.40" stop-color="#0E0A1A"/>
+      <stop offset="1.00" stop-color="#04030A"/>
+    </radialGradient>
+
+    <radialGradient id="ojos" cx="50%" cy="50%" r="50%">
+      <stop offset="0.00" stop-color="#ECEFF8" stop-opacity="0.95"/>
+      <stop offset="0.60" stop-color="#9B7BD4" stop-opacity="0.50"/>
+      <stop offset="1.00" stop-color="#9B7BD4" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="cortina" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.00" stop-color="#04030A" stop-opacity="0.9"/>
+      <stop offset="1.00" stop-color="#04030A" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="glowH" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="14" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#vacio)"/>
+
+  <!-- Filamentos del destino -->
+  <g fill="none" stroke="#9B7BD4" stroke-width="1.0" opacity="0.18">
+    <path d="M 0,200 C 400,140 700,320 960,220 C 1220,120 1520,300 1920,200"/>
+    <path d="M 0,320 C 420,260 680,440 960,340 C 1240,240 1500,420 1920,320"/>
+    <path d="M 0,440 C 380,380 720,560 960,460 C 1200,360 1540,540 1920,440"/>
+    <path d="M 0,700 C 440,640 660,820 960,720 C 1260,620 1500,800 1920,700"/>
+    <path d="M 0,820 C 400,760 700,940 960,840 C 1220,740 1560,920 1920,820"/>
+  </g>
+
+  <!-- Circulo del Sello del Dios (el Laberinto) -->
+  <g transform="translate(960 540)" fill="none" stroke-linecap="round">
+    <circle r="330" stroke="#9B7BD4" stroke-width="1.2" opacity="0.26"/>
+    <circle r="292" stroke="#5C688A" stroke-width="0.9" opacity="0.20"/>
+    <circle r="254" stroke="#9B7BD4" stroke-width="1.4" opacity="0.32"/>
+    <circle r="216" stroke="#B47BD4" stroke-width="0.9" opacity="0.24"/>
+    <circle r="178" stroke="#9B7BD4" stroke-width="1.1" opacity="0.28"/>
+
+    <!-- Octagono exterior -->
+    <polygon points="330,0 233.3,233.3 0,330 -233.3,233.3 -330,0 -233.3,-233.3 0,-330 233.3,-233.3"
+             stroke="#9B7BD4" stroke-width="1.3" opacity="0.32"/>
+    <!-- Rombo -->
+    <polygon points="0,-254 180,0 0,254 -180,0"
+             stroke="#B47BD4" stroke-width="1.2" opacity="0.28"/>
+    <!-- Cruz invertida -->
+    <path d="M -216,0 H 216 M 0,-216 V 216" stroke="#5C688A" stroke-width="1.0" opacity="0.22"/>
+
+    <!-- Runas en el borde -->
+    <g stroke="#E0B354" stroke-width="1.5" opacity="0.42">
+      <path d="M 0,-330 v 26 M -292,-292 l 18,18 M -330,0 h 26 M -292,292 l 18,-18"/>
+      <path d="M 0,330 v -26 M 292,292 l -18,-18 M 330,0 h -26 M 292,-292 l -18,18"/>
+    </g>
+  </g>
+
+  <!-- El ojo que observa -->
+  <g transform="translate(960 540)" filter="url(#glowH)">
+    <ellipse cx="0" cy="0" rx="230" ry="126" fill="#9B7BD4" opacity="0.06"/>
+    <!-- Pupila -->
+    <ellipse cx="0" cy="0" rx="96" ry="88" fill="#04030A"/>
+    <ellipse cx="0" cy="0" rx="96" ry="88" fill="url(#ojos)" opacity="0.55"/>
+    <ellipse cx="0" cy="0" rx="34" ry="62" fill="#ECEFF8" opacity="0.85"/>
+    <circle cx="-22" cy="-26" r="11" fill="#FFFFFF" opacity="0.90"/>
+  </g>
+
+  <!-- Rayos que irradian del ojo -->
+  <g stroke="#9B7BD4" stroke-width="1.0" opacity="0.14">
+    <path d="M 960,540 L 960,60  M 960,540 L 1330,180 M 960,540 L 1400,540"/>
+    <path d="M 960,540 L 1330,900 M 960,540 L 960,1020 M 960,540 L 590,900"/>
+    <path d="M 960,540 L 520,540  M 960,540 L 590,180"/>
+  </g>
+
+  <!-- Motes que ascienden hacia el ojo -->
+  <g filter="url(#glowH)">
+    <circle cx="700"  cy="820" r="2.4" fill="#9B7BD4" opacity="0.55"/>
+    <circle cx="860"  cy="700" r="2.0" fill="#B47BD4" opacity="0.45"/>
+    <circle cx="1060" cy="760" r="2.6" fill="#9B7BD4" opacity="0.50"/>
+    <circle cx="1240" cy="840" r="2.2" fill="#E0B354" opacity="0.40"/>
+    <circle cx="560"  cy="640" r="2.0" fill="#9B7BD4" opacity="0.40"/>
+  </g>
+
+  <!-- Suelo -->
+  <rect x="0" y="940" width="1920" height="140" fill="url(#cortina)"/>
+</svg>

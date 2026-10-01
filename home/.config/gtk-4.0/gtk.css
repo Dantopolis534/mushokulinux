@@ -1,0 +1,137 @@
+/* =============================================================================
+ *  cyberArch-Dotfiles :: Mushoku Tensei
+ *  gtk-4.0/gtk.css  --  Tinte las apps GTK4 de color Fittoa
+ *
+ *  Se activa con:
+ *    gtk4-query-settings load  (automático en GTK 4.14+)
+ *  o forzandolo:
+ *    GTK_DEBUG=interactive GDK_DEBUG=gl gtk4-demo
+ * ============================================================================= */
+
+/* --- Fondos base: el vacio de Hitogami ------------------------------------- */
+window,
+dialog,
+.background {
+    background-color: @theme_bg_color;
+    color:            @theme_fg_color;
+}
+
+/* Cajas de entrada: el agua quieta de Roxy */
+entry,
+.text,
+.spinbutton {
+    background-image: none;
+    background-color: alpha(@theme_bg_color, 0.9);
+    border:           1px solid alpha(@borders, 0.9);
+    border-radius:    8px;
+    padding:          6px 8px;
+    color:            @theme_fg_color;
+    caret-color:      #5BC8FF;
+    box-shadow:       none;
+    transition:       all 180ms ease;
+}
+
+entry:focus,
+.text:focus {
+    border:      1px solid #5BC8FF;
+    box-shadow:  0 0 0 2px alpha(#5BC8FF, 0.25);
+}
+
+/* --- Botones --------------------------------------------------------------- */
+button {
+    border-radius:   8px;
+    padding:        6px 14px;
+    background-color: alpha(@theme_bg_color, 0.7);
+    border:          1px solid alpha(@borders, 0.9);
+    color:           @theme_fg_color;
+    transition:      all 160ms ease;
+}
+
+button:hover {
+    background-color: alpha(#5BC8FF, 0.16);
+    border-color:     #5BC8FF;
+    color:            #ECEFF8;
+}
+
+button:active {
+    background-color: alpha(#5BC8FF, 0.30);
+}
+
+/* --- Listas y tablas ------------------------------------------------------- */
+list,
+listview,
+grid {
+    background-color: transparent;
+}
+
+list row:selected,
+listview row:selected {
+    background-color: alpha(#5BC8FF, 0.22);
+    color:            #ECEFF8;
+}
+
+/* --- Checkboxes y radios: Eris y Sylphie ---------------------------------- */
+checkbutton,
+radiobutton {
+    transition: all 140ms ease;
+}
+
+checkbutton:checked,
+radiobutton:checked {
+    background-color: #5FD98A;
+    color:            #080A12;
+}
+
+/* --- Sliders: el oro de Rudeus -------------------------------------------- */
+scale trough {
+    background-color: alpha(@borders, 0.8);
+    border-radius:    6px;
+    min-height:       6px;
+}
+
+scale highlight {
+    background-image: none;
+    background-color: #E0B354;
+    border-radius:    6px;
+}
+
+slider {
+    background-color: #E0B354;
+    border:           2px solid #080A12;
+    min-width:        16px;
+    min-height:       16px;
+    border-radius:    50%;
+}
+
+/* --- Scrollbars ------------------------------------------------------------ */
+scrollbar {
+    background-color: alpha(@theme_bg_color, 0.5);
+    border:           none;
+}
+
+scrollbar slider {
+    background-color: #26304F;
+    border-radius:    8px;
+    min-width:        8px;
+    margin:           2px;
+}
+
+scrollbar slider:hover {
+    background-color: #5BC8FF;
+}
+
+/* --- Notas: el violeta de Lara -------------------------------------------- */
+.note {
+    background-color: alpha(#B47BD4, 0.14);
+    border-left:      3px solid #B47BD4;
+    border-radius:    0 8px 8px 0;
+}
+
+/* --- Tooltips -------------------------------------------------------------- */
+tooltip {
+    background-color: #121729;
+    border:           1px solid #9B7BD4;
+    border-radius:    8px;
+    color:           #ECEFF8;
+    padding:          6px 10px;
+}

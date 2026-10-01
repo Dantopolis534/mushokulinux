@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+# =============================================================================
+#  mt-temperatura -- Modulo Waybar: la "aura magica" del PORTATIL
+#  Lee sensores de la ASUS TUF. Cae a la iGPU si las fuentes de nvidia no
+#  existen (sesion Hyprland corre sobre Intel).
+# =============================================================================
+
+set -uo pipefail
+
+rojo='#FF5F56'
+oro='#E0B354'
+cyan='#5BC8FF'
+
+obtener_temps() {
+    local temps=()
+
+    # 1) Coretemp del kernel (preferido: siempre presente)
+    if [[ -d /sys/class/thermal ]]; then
+        local t
+        for zona in /sys/class/thermal/thermal_zone*; do
+            [[ -r "$zona/temp" ]] || continue
+            t=$(cat "$zona/temp" 2>/dev/null) || continue
+            (( t > 0 )) || continue
+            # los valores vem en mili-grados
+            temps+=( $(( t / 1000 )) )
+        done
+    fi
+
+    # 2) lm-sensors si esta instalado
+    if command -v sensors >/dev/null 2>&1; then
+        while read -r _ t _; do
+            [[ "$t" =~ ^[0-9]+$ ]] && temps+=( "$t" )
+        done < <(sensors -u 2>/dev/null | grep -oP 'temp[0-9]_input:\s*\K[0-9.]+')
+    fi
+
+    # 3) Ultimo recurso: nvidia-smi
+    if [[ ${#temps[@]} -eq 0 ]] && command -v nvidia-smi >/dev/null 2>&1; then
+        local g
+        g=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits 2>/dev/null | head -n1)
+        [[ -n "$g" ]] && temps+=( "$g" )
+    fi
+
+    printf '%s\n' "${temps[@]:-}"
+}
+
+main() {
+    mapfile -t temps < <(obtener_temps)
+    [[ ${#temps[@]} -eq 0 ]] && { echo ""; exit 0; }
+
+    local max=0 t
+    for t in "${temps[@]}"; do
+        [[ "$t" =~ ^[0-9]+$ ]] || continue
+        (( t > max )) && max=$t
+    done
+
+    [[ $max -eq 0 ]] && { echo ""; exit 0; }
+
+    # color segun umbral termico
+    if   (( max >= 88 )); then echo -e "${rojo}${max}"
+    elif (( max >= 78 )); then echo -e "${oro}${max}"
+    else                       echo -e "${cyan}${max}"
+    fi
+}
+
+main

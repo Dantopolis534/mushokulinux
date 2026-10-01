@@ -1,0 +1,217 @@
+# =============================================================================
+#  cyberArch-Dotfiles :: Mushoku Tensei
+#  rofi/theme.rasi  ::  El grimorio (lanzador de comandos y ventanas)
+#
+#  NOTA DE SINTAXIS rasi:
+#    - Comentarios de linea  : #
+#    - Comentarios de bloque : /* ... */
+#    - NO existe  //         (no es un comentario valido)
+#    - Variables            : $nombre   (NO @nombre)
+#    - Todo debe ir dentro de un bloque { }
+#
+#  La paleta vive en themes/mushoku-tensei/colors.rasi
+#  (generado desde colors.json por themes/export.py).
+# =============================================================================
+
+* {
+    bg0:       #080A12;
+    bg1:       #0B0E1A;
+    bg2:       #121729;
+    bg3:       #1B2340;
+    bg4:       #26304F;
+
+    fg0:       #ECEFF8;
+    fg1:       #C9D4E8;
+    fg2:       #8E9AB8;
+    fg3:       #5C688A;
+
+    roxy:      #5BC8FF;
+    eris:      #FF5F56;
+    sylphie:   #5FD98A;
+    rudeus:    #E0B354;
+    hitogami:  #9B7BD4;
+    lara:      #B47BD4;
+
+    selected:  #26304F;
+    radius:    12px;
+}
+
+# ------------------------------------------------------------------ ventana
+window {
+    location:         center;
+    anchor:           center;
+    border:            2px;
+    border-radius:     $radius;
+    border-color:      $hitogami;
+    background-color:  $bg1;
+    padding:           10px;
+}
+
+# --------------------------------------------------------------- dmenu/drun
+# Este bloque sigue al launcher con Ctrl+Alt+T; comparte paleta pero es mas sobrio.
+* {
+    #dmenu {
+        background-color:  $bg1;
+        text-color:        $fg1;
+    }
+
+    #dmenu-entry {
+        background-color:  transparent;
+        text-color:        $fg2;
+    }
+
+    #dmenu-entry.selected {
+        background-color:  $selected;
+        text-color:        $fg0;
+    }
+}
+
+# ------------------------------------------------------------------ inputbar
+inputbar {
+    spacing:             12px;
+    children-padding:    10px 14px;
+    background-color:    $bg2;
+    border-radius:       8px;
+    border-bottom:       0px;
+}
+
+prompt {
+    background-color:    transparent;
+    text-color:          $hitogami;
+    font:                "JetBrainsMono Nerd Font 16";
+    padding:             0;
+}
+
+case-indicator {
+    text-color:  $hitogami;
+    font:        "JetBrainsMono Nerd Font 13";
+}
+
+separator {
+    background-color:  transparent;
+}
+
+# --------------------------------------------------------------- text-input
+text-input {
+    background-color:    transparent;
+    text-color:          $fg0;
+    font:                "JetBrainsMono Nerd Font 14";
+    placeholder-color:   $fg3;
+    placeholder-text:    "digita un hechizo...";
+    spell:               no;
+    border-radius:       6px;
+    padding:             4px 6px;
+}
+
+# ------------------------------------------------------------------ listview
+listview {
+    background-color:  transparent;
+    dynamic:           true;
+    rows:              10;
+    fixed-height:      false;
+    spacing:           4px;
+    scrollbar:         false;
+    padding:           8px 4px 4px 4px;
+}
+
+# -------------------------------------------------------------------- entry
+entry {
+    background-color:    transparent;
+    text-color:          $fg1;
+    font:                "JetBrainsMono Nerd Font 12.5";
+    expand:              false;
+    width:               100%;
+    padding:             8px 10px;
+    border-radius:       8px;
+    border:              0px;
+    spacing:             10px;
+    children-padding:    0px;
+}
+
+entry selected {
+    background-color:  $selected;
+    text-color:        $fg0;
+    border-left:       3px solid $roxy;
+}
+
+# ------------------------------------------------------------ element-text
+element-text {
+    vertical:    false;
+    padding:     0px;
+    text-color:  $fg1;
+}
+
+element-text.selected {
+    text-color:  $fg0;
+}
+
+element-text.urgent {
+    text-color:  $eris;
+}
+
+element-text.active {
+    text-color:  $roxy;
+}
+
+element-icon {
+    size:      28px;
+    vertical:  false;
+    padding:   0px;
+}
+
+# ------------------------------------------------------------- mode-switch
+mode-switch {
+    text-color:  $hitogami;
+    font:        "JetBrainsMono Nerd Font 12";
+}
+
+window mode-switch {
+    padding:  10px;
+    spacing:  12px;
+}
+
+# --------------------------------------------------------------- ventanas
+client-list {
+    background-color:  transparent;
+    markup-hints:      bold;
+    padding:           6px;
+}
+
+client-list #window {
+    background-color:  transparent;
+    text-color:        $fg1;
+    font:              "JetBrainsMono Nerd Font 12.5";
+    padding:           7px 10px;
+    border-radius:     8px;
+}
+
+client-list #window.focus {
+    background-color:  $selected;
+    text-color:        $fg0;
+    border-left:       3px solid $rudeus;
+}
+
+client-list #window.active {
+    text-color:  $roxy;
+}
+
+client-list #window.urgent {
+    text-color:  $eris;
+}
+
+client-list #ws {
+    background-color:  transparent;
+    text-color:        $fg3;
+    font:              "JetBrainsMono Nerd Font 12.5";
+    padding:           7px 10px;
+    border-radius:     8px;
+}
+
+client-list #ws.focus {
+    background-color:  $selected;
+    text-color:        $fg0;
+}
+
+client-list #ws.active {
+    border-left:  2px solid $roxy;
+}

@@ -1,0 +1,52 @@
+# --- Sistema operativo -------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.#*
+\#*#
+
+# --- Editores ---------------------------------------------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# --- Python ------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# --- Shell -------------------------------------------------------------------
+*.log
+.bash_history
+.zsh_history
+.fish_history
+
+# --- Fondos generados --------------------------------------------------------
+# install.sh convierte los SVG a PNG. Los PNG son binarios y pesan:
+# regeneralos con:  ./install.sh --no-paquetes
+assets/wallpapers/*.png
+
+# --- Secretos (nunca deben estar en el repo) --------------------------------
+*.key
+*.pem
+*.pfx
+*.env
+.envrc
+id_rsa*
+id_ed25519*
+*.age
+
+# --- Cosas que genera install.sh ---------------------------------------------
+# NO los borres del repo, solo del arbol de trabajo de Arch:
+# (esta lista documenta lo que el repo NO debe trackear)
+
+# --- Backups y temporales ---------------------------------------------------
+*.bak
+*.old
+*.tmp
+*.log.[0-9]*

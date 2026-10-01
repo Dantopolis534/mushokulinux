@@ -1,0 +1,177 @@
+/* =============================================================================
+ *  cyberArch-Dotfiles :: Mushoku Tensei
+ *  waybar/style.css
+ *  Paleta: themes/mushoku-tensei/colors.css
+ * ========================================================================== */
+
+@define-color bg0        #080A12;
+@define-color bg1        #0B0E1A;
+@define-color bg2        #121729;
+@define-color bg3        #1B2340;
+@define-color bg4        #26304F;
+
+@define-color fg0        #ECEFF8;
+@define-color fg1        #C9D4E8;
+@define-color fg2        #8E9AB8;
+@define-color fg3        #5C688A;
+
+@define-color roxy       #5BC8FF;
+@define-color eris       #FF5F56;
+@define-color sylphie    #5FD98A;
+@define-color rudeus     #E0B354;
+@define-color hitogami   #9B7BD4;
+@define-color lara       #B47BD4;
+
+/* ------------------------------------------------------------- base global */
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: 600;
+    font-size: 10.5pt;
+    min-height: 0;
+    border: none;
+    border-radius: 0;
+    text-shadow: none;
+}
+
+window#waybar {
+    background-color: alpha(@define-color bg1, 0.88);
+    border-bottom: 2px solid alpha(@define-color bg4, 0.9);
+}
+
+#custom-sello {
+    color:           alpha(@define-color roxy, 0.95);
+    background:      linear-gradient(
+                        to right,
+                        alpha(@define-color bg0, 0.0),
+                        alpha(@define-color bg3, 0.85)
+                     );
+    padding: 0 14px;
+    margin-right: 4px;
+    border-right: 2px solid alpha(@define-color roxy, 0.45);
+    font-size: 10pt;
+    letter-spacing: 2px;
+}
+
+/* ---------------------------------------------------------- area principal */
+#workspaces {
+    margin-left: 6px;
+}
+
+#workspaces button {
+    padding: 0 9px;
+    color:           alpha(@define-color fg3, 1);
+    background-color: transparent;
+    border-bottom: 2px solid transparent;
+    border-radius: 6px 6px 0 0;
+    transition: color 180ms ease, background-color 180ms ease;
+    min-width: 24px;
+}
+
+#workspaces button:hover {
+    color: @define-color fg1;
+    background-color: alpha(@define-color bg3, 0.55);
+}
+
+#workspaces button.active {
+    color:           @define-color bg0;
+    background-color: alpha(@define-color roxy, 0.92);
+    border-bottom: 2px solid alpha(@define-color roxy, 1);
+    text-shadow: none;
+}
+
+/* El workspace del "laberinto" (6) usa el violeta de Hitogami */
+#workspaces button.active:has(icon:nth-child(1)) { }
+
+/* ------------------------------------------------------------------ submap */
+#submap {
+    color: @define-color hitogami;
+    padding: 0 8px;
+    font-size: 10pt;
+}
+
+/* ----------------------------------------------------------------- ventana */
+#window {
+    color: alpha(@define-color fg1, 0.92);
+    font-weight: 500;
+}
+
+/* ------------------------------------------------------ modulos de la derecha */
+#cpu,
+#memory,
+#custom-temperatura,
+#backlight,
+#battery,
+#network,
+#bluetooth,
+#pulseaudio {
+    padding: 0 7px;
+    color: alpha(@define-color fg1, 0.9);
+    transition: color 180ms ease;
+}
+
+#cpu          { color: alpha(@define-color roxy,    0.85); }
+#memory       { color: alpha(@define-color hitogami, 0.85); }
+#custom-temperatura { color: alpha(@define-color eris,    0.85); }
+#backlight    { color: alpha(@define-color rudeus,  0.8);  }
+#battery      { color: alpha(@define-color sylphie, 0.85); }
+#network      { color: alpha(@define-color roxy,    0.85); }
+#bluetooth    { color: alpha(@define-color lara,    0.8);  }
+#pulseaudio   { color: alpha(@define-color ghislaine,0.85); }
+
+#cpu:hover, #memory:hover, #custom-temperatura:hover,
+#backlight:hover, #battery:hover, #network:hover,
+#bluetooth:hover, #pulseaudio:hover {
+    color: @define-color fg0;
+    background-color: alpha(@define-color bg3, 0.7);
+}
+
+/* estados criticos */
+#network.disconnected { color: @define-color eris; }
+#battery.warning      { color: @define-color rudeus; }
+#battery.critical     { color: @define-color eris;   }
+#custom-temperatura.warn   { color: @define-color rudeus; }
+#custom-temperatura.crit   { color: @define-color eris; }
+
+/* ------------------------------------------------------------------- reloj */
+#clock {
+    padding: 0 12px;
+    margin-left: 4px;
+    border-left: 2px solid alpha(@define-color bg4, 0.9);
+    color: @define-color fg1;
+    background: linear-gradient(
+                    to left,
+                    alpha(@define-color bg3, 0.85),
+                    alpha(@define-color bg0, 0.0)
+                 );
+    font-weight: 700;
+}
+
+#clock:hover { color: @define-color fg0; }
+
+/* -------------------------------------------------------------------- tray */
+#tray {
+    padding: 0 8px;
+    margin-right: 4px;
+    background: linear-gradient(
+                    to left,
+                    alpha(@define-color bg3, 0.85),
+                    alpha(@define-color bg0, 0.0)
+                 );
+}
+
+#tray > .passive-icon { color: @define-color fg2; }
+#tray > .active-icon  { color: @define-color roxy; }
+#tray > .needs-attention { color: @define-color eris; }
+
+/* ---------------------------------------------------------------- tooltips */
+tooltip {
+    background-color: alpha(@define-color bg2, 0.97);
+    border: 1px solid alpha(@define-color bg4, 1);
+    border-radius: 8px;
+    color: @define-color fg1;
+    padding: 6px 10px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 9.5pt;
+}
+
+tooltip label { color: @define-color fg1; }

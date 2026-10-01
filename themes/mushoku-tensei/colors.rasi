@@ -1,0 +1,35 @@
+/* cyberArch-Dotfiles :: Mushoku Tensei - formato rasi
+ * Consumido por rofi (home/.config/rofi/theme.rasi lo importa con @theme).
+ * OJO: dunst NO usa rasi; sus colores van en home/.config/dunst/dunstrc.
+ * Generado desde colors.json por export.py - NO EDITAR A MANO.
+ */
+
+
+* {
+    bg0         :  #080A12;
+    bg1         :  #0B0E1A;
+    bg2         :  #121729;
+    bg3         :  #1B2340;
+    bg4         :  #26304F;
+    fg0         :  #ECEFF8;
+    fg1         :  #C9D4E8;
+    fg2         :  #8E9AB8;
+    fg3         :  #5C688A;
+
+    roxy        :  #5BC8FF;
+    eris        :  #FF5F56;
+    sylphie     :  #5FD98A;
+    ghislaine   :  #C9D4E8;
+    rudeus      :  #E0B354;
+    hitogami    :  #9B7BD4;
+    lara        :  #B47BD4;
+    ruijerd     :  #8C6BD4;
+
+    error       :  #FF5F56;
+    success     :  #5FD98A;
+    warning     :  #E0B354;
+    info        :  #5BC8FF;
+    hint        :  #9B7BD4;
+
+    selected    :  #26304F;
+}
